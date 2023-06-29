@@ -50,7 +50,7 @@ This project is part of the Codecademy Class. The purpose is to practice React J
 * Receive two props: name, description
 * Render a ```p``` element with the name prop. Give this element a className of "tile-title"
 * Iterate over the values in the description object, passed in via props, and render a ```p``` element for each value and give each a className of "tile"
-* Just like the ```TileList``` component, the Tile component is generalized to work with data from any object. This allows it to be used in both the ```ContactsPage``` and AppointmentsPage`````` components.
+* Just like the ```TileList``` component, the Tile component is generalized to work with data from any object. This allows it to be used in both the ```ContactsPage``` and ```AppointmentsPage``` components.
 
 ## AppointmentsPage.js
 * Stateful component that handles the logic for adding new appointments and listing current appointments.
@@ -66,3 +66,23 @@ This project is part of the Codecademy Class. The purpose is to practice React J
     * local state variable setter functions
     * handleSubmit callback function
 * In the Appointments section, render a ```TileList``` with the appointment array passed via ```props```
+
+## AppointmentForm.js
+* Stateless component that renders a web form to collect the necessary appointment information.
+* Render a form with:
+    * The ```onSubmit``` attribute set to the callback function passed in via props
+    * 3 controlled input components, to be used for the name, date and time appointment data
+    * A ```ContactPicker``` component with the contacts list passed in via props
+    * A submit button
+* Use ```getTodayString()``` to set the min attribute of the date input
+
+## ContactPicker.js
+* Stateless component that renders a drop-down list of all contact names.
+* Receive 4 props:
+    * The array of contacts
+    * A callback function to handle when the onChange event is triggered
+    * value
+    * name
+* Render a select element with the onChange attribute set to the callback passed in via props, a value attribute set to the value prop, and a name attribute set to the name prop.
+* Add a default option element with the text “No Contact Selected” and a value attribute of "".
+* Iteratively add option elements using the contact names from the array passed in via props
