@@ -9,6 +9,32 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
+  const [contacts, setContacts] = [
+    {
+      firstName:"Ben",
+      lastName:"Prigent",
+      email:"hello@bprigent.com",
+      phone:"0635125225"
+    },
+    {
+      firstName:"Iris",
+      lastName:"Prigent",
+      email:"iris.prigent@gmail.com",
+      phone:"0612141644"
+    },
+    {
+      firstName:"Juliette",
+      lastName:"Prigent",
+      email:"julprigent@gmail.com",
+      phone:"0613421214"
+    },
+    {
+      firstName:"Christophe",
+      lastName:"Prigent",
+      email:"cpri35@gmail.com",
+      phone:"0625344556"
+    }
+  ]
 
   /*
   Implement functions to add data to
@@ -18,7 +44,7 @@ function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
-      <Route path={ROUTES.CONTACTS} element={ <ContactsPage /> /* Add props to ContactsPage */ }/>
+      <Route path={ROUTES.CONTACTS} element={ <ContactsPage contacts={contacts} /> /* Add props to ContactsPage */ }/>
       <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage /> /* Add props to AppointmentsPage */ }/>
     </Route>
   ));

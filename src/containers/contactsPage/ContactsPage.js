@@ -5,7 +5,7 @@ import "./ContactPage.css"
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
-export const ContactsPage = () => {
+export const ContactsPage = ({contacts}) => {
   /*
   Define state variables for 
   contact info and duplicate check
