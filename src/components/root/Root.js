@@ -1,4 +1,10 @@
 import {  Outlet, NavLink } from "react-router-dom";
+import "./Root.css";
+import logo from './logo192.png';
+import appointment from './appointment.png';
+import contact from './contact.png';
+
+
 
 export const ROUTES = {
     CONTACTS: "/contacts",
@@ -7,17 +13,20 @@ export const ROUTES = {
 
 function Root() {
     return (
-        <>
-            <nav>
-                <NavLink to={ROUTES.CONTACTS} >
-                Contacts
+        <div className="mainApp">
+            <nav id="mainNav" className="mainNav">
+                <div className="navLogoWrapper">
+                    <img className="navLogo" src={logo}/>
+                </div>
+                <NavLink className="subNavWrapper" to={ROUTES.CONTACTS} >
+                    <img className="subNavIcon" src={contact}/>
                 </NavLink>
-                <NavLink to={ROUTES.APPOINTMENTS} >
-                Appointments
+                <NavLink className="subNavWrapper" to={ROUTES.APPOINTMENTS} >
+                    <img className="subNavIcon" src={appointment}/>
                 </NavLink>
             </nav>
             <Outlet/>
-      </>
+        </div>
     );
 
 }

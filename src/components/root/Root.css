@@ -1,0 +1,62 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.mainApp {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.mainNav {
+    width: 88px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #F2F2F2;
+}
+
+.navLogoWrapper {
+    padding: 24px;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.navLogo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #17BA7F;
+}
+
+.subNavWrapper {
+    margin-top: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid #F2F2F2;
+}
+
+.subNavWrapper:hover {
+    background-color: #F2F2F2;
+    box-shadow: 2px 2px 12px rgb(213, 213, 213);
+}
+
+.subNavIcon {
+    width: 20px;
+    height: 20px;
+}
+
+#mainNav a.active {
+    background-color: white;
+    box-shadow: 2px 2px 12px rgb(213, 213, 213);
+  }
