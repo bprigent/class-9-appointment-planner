@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "../../components/header/Header";
 
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 import { TileList } from "../../components/tileList/TileList";
@@ -18,14 +19,16 @@ export const AppointmentsPage = () => {
   };
 
   return (
-    <div>
-      <section>
-        <h2>Add Appointment</h2>
-      </section>
-      <hr />
-      <section>
-        <h2>Appointments</h2>
-      </section>
+    <div className="mainPageWrapper">
+      <Header H1="Appointments" />
+      <div className="mainPageSecondaryWrapper">
+        <div className="mainPageColumn1">
+          <h2>Appointment</h2>
+        </div>
+        <div className="mainPageColumn2">
+          <h2>Add Appointment</h2> 
+        </div>
+      </div>
     </div>
   );
 };

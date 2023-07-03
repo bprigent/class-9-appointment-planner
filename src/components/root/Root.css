@@ -10,6 +10,7 @@ body {
     flex-direction: row;
     width: 100vw;
     height: 100vh;
+    box-sizing: border-box;
 }
 
 .mainNav {
@@ -19,10 +20,17 @@ body {
     flex-direction: column;
     align-items: center;
     border-right: 1px solid #F2F2F2;
+    box-sizing: border-box;
 }
 
 .navLogoWrapper {
     padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     border-bottom: 1px solid #F2F2F2;
 }
 
@@ -37,10 +45,12 @@ body {
     margin-top: 24px;
     width: 40px;
     height: 40px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.03);
     border: 1px solid #F2F2F2;
