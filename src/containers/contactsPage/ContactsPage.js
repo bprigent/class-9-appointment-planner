@@ -4,7 +4,7 @@ import "./ContactPage.css"
 import { FontH2 } from "../../components/fonts/fonts";
 
 import { ContactForm } from "../../components/contactForm/ContactForm";
-import { TileList } from "../../components/tileList/TileList";
+import { ContactTile } from "../../components/tile/Tile";
 
 export const ContactsPage = ({contacts, addToContacts}) => {
 
@@ -39,9 +39,11 @@ export const ContactsPage = ({contacts, addToContacts}) => {
       <div className="mainPageSecondaryWrapper">
         <div className="mainPageColumn1">
           <FontH2 copy="My Contacts"/>
-          {/*contacts.map( (contact) => (
-            <div>{contact.firstName}</div>
-          ))*/}
+          <div className="contactTilesList">
+            {contacts.map((contact, index) => (
+              <ContactTile key={index} firstName={contact.firstName} lastName={contact.lastName} phone={contact.phone} email={contact.email}/>
+            ))}
+          </div>
         </div>
         <div className="mainPageColumn2"> 
           <FontH2 copy="Add contact"/>

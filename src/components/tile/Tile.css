@@ -1,0 +1,10 @@
+.tileParentWrapper {
+    border-bottom: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    background-color: #f2f2f2;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    box-sizing: border-box;
+}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "../../components/header/Header";
 
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
-import { TileList } from "../../components/tileList/TileList";
 
 export const AppointmentsPage = () => {
   /*

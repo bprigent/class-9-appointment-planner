@@ -1,9 +1,12 @@
 import React from "react";
+import "./Tile.css"
+import { FontH3, FontP } from "../fonts/fonts";
 
-export const Tile = () => {
+export function ContactTile ({firstName, lastName, phone, email}) {
   return (
-    <div className="tile-container">
-      
+    <div className="tileParentWrapper">
+      <FontH3 copy={`${lastName}, ${firstName}`}/>
+      <FontP copy={`${phone} - ${email}`}/>
     </div>
   );
 };
