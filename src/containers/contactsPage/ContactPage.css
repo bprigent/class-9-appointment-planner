@@ -2,6 +2,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .mainPageSecondaryWrapper {
@@ -17,4 +18,5 @@
 .mainPageColumn2 {
     width: 420px;
     border-left: 1px solid #f2f2f2;
+    padding: 40px;
 }

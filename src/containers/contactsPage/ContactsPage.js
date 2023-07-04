@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/header/Header";
 import "./ContactPage.css"
+import { FontH2 } from "../../components/fonts/fonts";
 
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
-export const ContactsPage = ({contacts}) => {
+export const ContactsPage = ({contacts, addToContacts}) => {
   /*
   Define state variables for 
   contact info and duplicate check
@@ -29,13 +30,14 @@ export const ContactsPage = ({contacts}) => {
       <Header H1="Contacts" />
       <div className="mainPageSecondaryWrapper">
         <div className="mainPageColumn1">
-          <h2>Contacts</h2>
+          <FontH2 copy="My Contacts"/>
           {/*contacts.map( (contact) => (
             <div>{contact.firstName}</div>
           ))*/}
         </div>
-        <div className="mainPageColumn2">
-          <h2>Add Contact</h2> 
+        <div className="mainPageColumn2"> 
+          <FontH2 copy="Add contact"/>
+          <ContactForm />
         </div>
       </div>
     </div>

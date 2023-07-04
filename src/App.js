@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Navigate } from "react-router-dom"
 import Root, { ROUTES } from "./components/root/Root";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
@@ -10,7 +10,7 @@ function App() {
 
 
   // state vars for contacts and appointments
-  const [contacts, setContacts] = [
+  const [contacts, setContacts] = useState([
     {
       firstName:"Ben",
       lastName:"Prigent",
@@ -35,8 +35,8 @@ function App() {
       email:"cpri35@gmail.com",
       phone:"0625344556"
     }
-  ];
-  const [appointments, setAppointments] = [
+  ]);
+  const [appointments, setAppointments] = useState([
     {
       title:"This is appointment title",
       attendee:"Benjamin Prigent",
@@ -58,7 +58,7 @@ function App() {
       time:"1200",
       duration:2
     }
-  ];
+  ]);
 
 
 
@@ -99,7 +99,7 @@ function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
-      
+
       {/* adding routes to contact and appointments with the right props*/}
       <Route path={ROUTES.CONTACTS} element={ <ContactsPage addToContacts={addToContacts} contacts={contacts} /> }/>
       <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage addToAppointments={addToAppointments} appointments={appointments} /> }/>
