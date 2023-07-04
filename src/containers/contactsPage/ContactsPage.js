@@ -7,11 +7,7 @@ import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = ({contacts, addToContacts}) => {
-  /*
-  Define state variables for 
-  contact info and duplicate check
-  */
-  
+
   // manage form data in state variables
   const [firstName, setFirstName] = useState("John");
   const [lastName, setLastName] = useState("Doe");
@@ -24,12 +20,12 @@ export const ContactsPage = ({contacts, addToContacts}) => {
   const updatePhone = (e) => {setPhone(e.target.value)};
   const updateEmail = (e) => {setEmail(e.target.value)};
 
+  // Add contact info to contact list
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*
-    Add contact info and clear data
-    if the contact name is not a duplicate
-    */
+    // testing - console.log(firstName + lastName + email + phone)
+    addToContacts(firstName, lastName, email, phone);
+    // testing - console.log(contacts);
   };
 
   /*
@@ -49,7 +45,7 @@ export const ContactsPage = ({contacts, addToContacts}) => {
         </div>
         <div className="mainPageColumn2"> 
           <FontH2 copy="Add contact"/>
-          <ContactForm firstName={firstName} lastName={lastName} phone={phone} email={email} setFirstName={updateFirstName} setLastName={updateLastName} setPhone={updatePhone} setEmail={updateEmail} />
+          <ContactForm handleSubmit={handleSubmit} firstName={firstName} lastName={lastName} phone={phone} email={email} setFirstName={updateFirstName} setLastName={updateLastName} setPhone={updatePhone} setEmail={updateEmail} />
         </div>
       </div>
     </div>

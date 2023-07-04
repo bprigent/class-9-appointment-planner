@@ -65,7 +65,7 @@ function App() {
 
   // Functions to add data to contacts and appointments
   function addToContacts (newFirstName, newLastName, newEmail, newPhone) {
-    // create new obj
+    // create new object
     const newContactObject = {
       firstName: newFirstName,
       lastName: newLastName,
@@ -78,7 +78,7 @@ function App() {
     setContacts(newArray);
   };
   function addToAppointments (newTitle, newAttendee, newDate, newTime, newDuration) {
-    // create new obj
+    // create new object
     const newAppointmentObject = {
       title: newTitle,
       attendee: newAttendee,

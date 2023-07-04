@@ -15,22 +15,22 @@ export const ContactForm = ({
   return (
     <form className="formBlockWrapper" onSubmit={handleSubmit}>
       <div className="formLabelInputBlockWrapper">
-        <label for="firstName" className="formInputLabel">First name</label>
+        <label htmlFor="firstName" className="formInputLabel">First name</label>
         <input className="formInputBox" type="text" id="firstName" value={firstName} onChange={setFirstName}/>
       </div>
 
       <div className="formLabelInputBlockWrapper">
-        <label for="lastName" className="formInputLabel">Last name</label>
+        <label htmlFor="lastName" className="formInputLabel">Last name</label>
         <input className="formInputBox" type="text" id="lastName" value={lastName} onChange={setLastName}/>
       </div>
       
       <div className="formLabelInputBlockWrapper">
-        <label for="phone" className="formInputLabel">Phone number</label>
+        <label htmlFor="phone" className="formInputLabel">Phone number</label>
         <input className="formInputBox" type="tel" id="phone" value={phone} onChange={setPhone}/>
       </div>
 
       <div className="formLabelInputBlockWrapper">
-        <label for="email" className="formInputLabel">Email</label>
+        <label htmlFor="email" className="formInputLabel">Email</label>
         <input className="formInputBox" type="email" id="email" value={email} onChange={setEmail}/>
       </div>
       
