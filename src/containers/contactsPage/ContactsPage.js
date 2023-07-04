@@ -11,6 +11,18 @@ export const ContactsPage = ({contacts, addToContacts}) => {
   Define state variables for 
   contact info and duplicate check
   */
+  
+  // manage form data in state variables
+  const [firstName, setFirstName] = useState("John");
+  const [lastName, setLastName] = useState("Doe");
+  const [phone, setPhone] = useState("0016476132365");
+  const [email, setEmail] = useState("hello@johndoe.com");
+
+  // manage form data
+  const updateFirstName = (e) => {setFirstName(e.target.value)};
+  const updateLastName = (e) => {setLastName(e.target.value)};
+  const updatePhone = (e) => {setPhone(e.target.value)};
+  const updateEmail = (e) => {setEmail(e.target.value)};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +49,7 @@ export const ContactsPage = ({contacts, addToContacts}) => {
         </div>
         <div className="mainPageColumn2"> 
           <FontH2 copy="Add contact"/>
-          <ContactForm />
+          <ContactForm firstName={firstName} lastName={lastName} phone={phone} email={email} setFirstName={updateFirstName} setLastName={updateLastName} setPhone={updatePhone} setEmail={updateEmail} />
         </div>
       </div>
     </div>
