@@ -30,6 +30,9 @@ export const ContactsPage = ({contacts}) => {
       <div className="mainPageSecondaryWrapper">
         <div className="mainPageColumn1">
           <h2>Contacts</h2>
+          {/*contacts.map( (contact) => (
+            <div>{contact.firstName}</div>
+          ))*/}
         </div>
         <div className="mainPageColumn2">
           <h2>Add Contact</h2> 

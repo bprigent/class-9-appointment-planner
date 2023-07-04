@@ -5,10 +5,11 @@ import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  /*
-  Define state variables for 
-  contacts and appointments 
-  */
+
+
+
+
+  // state vars for contacts and appointments
   const [contacts, setContacts] = [
     {
       firstName:"Ben",
@@ -34,24 +35,87 @@ function App() {
       email:"cpri35@gmail.com",
       phone:"0625344556"
     }
-  ]
+  ];
+  const [appointments, setAppointments] = [
+    {
+      title:"This is appointment title",
+      attendee:"Benjamin Prigent",
+      date:"22/11/24",
+      time:"1200",
+      duration:2
+    },
+    {
+      title:"This is appointment title",
+      attendee:"Benjamin Prigent",
+      date:"22/11/24",
+      time:"1200",
+      duration:2
+    },
+    {
+      title:"This is appointment title",
+      attendee:"Benjamin Prigent",
+      date:"22/11/24",
+      time:"1200",
+      duration:2
+    }
+  ];
 
-  /*
-  Implement functions to add data to
-  contacts and appointments
-  */
 
+
+
+  // Functions to add data to contacts and appointments
+  function addToContacts (newFirstName, newLastName, newEmail, newPhone) {
+    // create new obj
+    const newContactObject = {
+      firstName: newFirstName,
+      lastName: newLastName,
+      email: newEmail,
+      phone: newPhone
+    };
+    //create new array
+    const newArray = [...contacts, newContactObject ];
+    // update contact array with new array containing new object
+    setContacts(newArray);
+  };
+  function addToAppointments (newTitle, newAttendee, newDate, newTime, newDuration) {
+    // create new obj
+    const newAppointmentObject = {
+      title: newTitle,
+      attendee: newAttendee,
+      date: newDate,
+      time: newTime,
+      duration: newDuration
+    };
+    //create new array
+    const newArray = [...appointments, newAppointmentObject ];
+    // update contact array with new array containing new object
+    setAppointments(newArray);
+  };
+
+
+
+
+  // set up the router
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
-      <Route path={ROUTES.CONTACTS} element={ <ContactsPage contacts={contacts} /> /* Add props to ContactsPage */ }/>
-      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage /> /* Add props to AppointmentsPage */ }/>
+      
+      {/* adding routes to contact and appointments with the right props*/}
+      <Route path={ROUTES.CONTACTS} element={ <ContactsPage addToContacts={addToContacts} contacts={contacts} /> }/>
+      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage addToAppointments={addToAppointments} appointments={appointments} /> }/>
     </Route>
   ));
-  
+
+
+
+
+  // return the router
   return (
     <RouterProvider router={router}/>
   );
+
+
+
 }
 
 export default App;
