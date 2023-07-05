@@ -8,11 +8,15 @@ import { ContactTile } from "../../components/tile/Tile";
 
 export const ContactsPage = ({contacts, addToContacts}) => {
 
+  useEffect(() => {
+    document.title = "Contacts";  
+  }, []);
+
   // manage form data in state variables
-  const [firstName, setFirstName] = useState("John");
-  const [lastName, setLastName] = useState("Doe");
-  const [phone, setPhone] = useState("0016476132365");
-  const [email, setEmail] = useState("hello@johndoe.com");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
 
   // manage form data
   const updateFirstName = (e) => {setFirstName(e.target.value)};
@@ -23,19 +27,24 @@ export const ContactsPage = ({contacts, addToContacts}) => {
   // Add contact info to contact list
   const handleSubmit = (e) => {
     e.preventDefault();
-    // testing - console.log(firstName + lastName + email + phone)
+    // add contacts to array
     addToContacts(firstName, lastName, email, phone);
-    // testing - console.log(contacts);
+    // clear form after submit
+    setFirstName("");
+    setLastName("");
+    setPhone("");
+    setEmail("");
   };
 
   /*
   Using hooks, check for contact name in the 
   contacts array variable in props
   */
+  
 
   return (
     <div className="mainPageWrapper">
-      <Header H1="Contacts" />
+      <Header copy="Contacts" />
       <div className="mainPageSecondaryWrapper">
         <div className="mainPageColumn1">
           <FontH2 copy="My Contacts"/>

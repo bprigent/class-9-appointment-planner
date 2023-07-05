@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/header/Header";
 
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 
 export const AppointmentsPage = () => {
+
+  // change the title of the html page
+  useEffect(() => {
+    document.title = "Appointments";  
+  }, []);
+
   /*
   Define state variables for 
   appointment info
@@ -19,7 +25,7 @@ export const AppointmentsPage = () => {
 
   return (
     <div className="mainPageWrapper">
-      <Header H1="Appointments" />
+      <Header copy="Appointments" />
       <div className="mainPageSecondaryWrapper">
         <div className="mainPageColumn1">
           <h2>Appointment</h2>
