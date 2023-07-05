@@ -1,22 +1,34 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/header/Header";
 
+import { FontH2 } from "../../components/fonts/fonts";
+
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 
-export const AppointmentsPage = () => {
+export const AppointmentsPage = (contacts, appointments, addToAppointments) => {
 
   // change the title of the html page
   useEffect(() => {
     document.title = "Appointments";  
   }, []);
 
-  /*
-  Define state variables for 
-  appointment info
-  */
+  // manage form data in state variables
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [contact, setContact] = useState("");
+
+  // manage form data
+  const updateTitle = (e) => {setTitle(e.target.value)};
+  const updateDate = (e) => {setDate(e.target.value)};
+  const updateTime = (e) => {setTime(e.target.value)};
+  const updateContact = (e) => {setContact(e.target.value)};
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("test handle submit")
     /*
     Add contact info and clear data  
     */
@@ -28,10 +40,25 @@ export const AppointmentsPage = () => {
       <Header copy="Appointments" />
       <div className="mainPageSecondaryWrapper">
         <div className="mainPageColumn1">
-          <h2>Appointment</h2>
+          <FontH2 copy="My appointments"/>
         </div>
         <div className="mainPageColumn2">
-          <h2>Add Appointment</h2> 
+          <FontH2 copy="Add appointment"/>
+          <AppointmentForm
+            handleSubmit={handleSubmit}
+
+            title={title} 
+            date={date} 
+            time={time} 
+            contact={contact}
+
+            contacts={contacts}
+
+            setTitle={updateTitle}
+            setDate={updateDate} 
+            setTime={updateTime} 
+            setContact={updateContact}
+          />
         </div>
       </div>
     </div>
