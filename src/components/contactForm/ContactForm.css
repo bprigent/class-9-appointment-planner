@@ -33,4 +33,10 @@
     box-shadow: 2px 2px 12px rgb(213, 213, 213);
     font-size: 16px;
     color: white;
+    cursor:pointer;
+}
+
+.formInputButton:active {
+    box-shadow: none;
+    background-color: #129c6a;
 }

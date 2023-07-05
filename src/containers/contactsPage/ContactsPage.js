@@ -47,6 +47,12 @@ export const ContactsPage = ({contacts, addToContacts}) => {
       setLastName("");
       setPhone("");
       setEmail("");
+    } else {
+      // do if data already in contact list
+      setFirstName("");
+      setLastName("");
+      setPhone("");
+      setEmail("");
     }
   };
 
