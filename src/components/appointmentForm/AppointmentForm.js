@@ -9,20 +9,20 @@ const getTodayString = () => {
   return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
 };
 
-export const AppointmentForm = ({
-  contacts,
 
+export function AppointmentForm ({
+  contacts,
   title,
   setTitle,
-  contact,
   setContact,
   date,
   setDate,
   time,
   setTime,
-
   handleSubmit
-}) => {
+}) {
+
+
 
   return (
     <form className="formBlockWrapper" onSubmit={handleSubmit}>
@@ -42,7 +42,7 @@ export const AppointmentForm = ({
       </div>
 
       <div className="formLabelInputBlockWrapper">
-        <ContactPicker arr={contacts} onChange={setContact} value={contact}/>
+        <ContactPicker setContact={setContact} arr={contacts}/>
       </div>
       
       <input className="formInputButton" type="submit" value="Create new appointment"/>

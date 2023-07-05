@@ -29,6 +29,7 @@ export const AppointmentsPage = ({contacts, appointments, addToAppointments}) =>
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("test handle submit")
+    addToAppointments(title, date, time, contact);
     /*
     Add contact info and clear data  
     */
@@ -49,19 +50,18 @@ export const AppointmentsPage = ({contacts, appointments, addToAppointments}) =>
         </div>
         <div className="mainPageColumn2">
           <FontH2 copy="Add appointment"/>
-          <AppointmentForm
+          <AppointmentForm 
             handleSubmit={handleSubmit}
-            
-            title={title} 
-            date={date} 
-            time={time} 
-            contact={contact}
+
+            title={title}
+            date={date}
+            time={time}
 
             contacts={contacts}
 
             setTitle={updateTitle}
-            setDate={updateDate} 
-            setTime={updateTime} 
+            setDate={updateDate}
+            setTime={updateTime}
             setContact={updateContact}
           />
         </div>

@@ -1,14 +1,22 @@
 import React from "react";
+import { useState } from "react";
 
-export const ContactPicker = ({arr, onChange, value, index}) => {
-  
+export function ContactPicker ({arr, setContact}) {
+
+  //get value of the first item on the list, so that we can have than as the initial value of the drop down
+  const initialValue = arr[0].firstName;
+  // create state variable, assign it initial value
+  let [ddValue, setDdValue] = useState(initialValue);
+
+ 
   
   return (
     <>
       <label className="formInputLabel" htmlFor="contact">Pick a contact</label>
-      <select className="formInputBox" name="contact" id="contact">
+      <select onChange={setContact} className="formInputBox" name="contact" id="contact">
+        <option hidden disabled selected value>Select an option...</option>
         {arr.map((item) => 
-          (<option key={index} value={item.firstName}>{item.firstName}</option>)
+          (<option value={item.firstName}>{item.firstName}</option>)
         )}
       </select>
     </>

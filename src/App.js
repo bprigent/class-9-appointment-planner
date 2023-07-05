@@ -36,27 +36,25 @@ function App() {
       phone:"0625344556"
     }
   ]);
+
   const [appointments, setAppointments] = useState([
     {
       title:"This is appointment title",
       contact:"Benjamin Prigent",
       date:"22/11/24",
-      time:"1200",
-      duration:2
+      time:"1200"
     },
     {
       title:"This is appointment title",
       contact:"Benjamin Prigent",
       date:"22/11/24",
-      time:"1200",
-      duration:2
+      time:"1200"
     },
     {
       title:"This is appointment title",
       contact:"Benjamin Prigent",
       date:"22/11/24",
-      time:"1200",
-      duration:2
+      time:"1200"
     }
   ]);
 
@@ -77,14 +75,13 @@ function App() {
     // update contact array with new array containing new object
     setContacts(newArray);
   };
-  function addToAppointments (newTitle, newAttendee, newDate, newTime, newDuration) {
+  function addToAppointments (newTitle, newAttendee, newDate, newTime) {
     // create new object
     const newAppointmentObject = {
       title: newTitle,
-      attendee: newAttendee,
+      contact: newAttendee,
       date: newDate,
       time: newTime,
-      duration: newDuration
     };
     //create new array
     const newArray = [...appointments, newAppointmentObject ];
