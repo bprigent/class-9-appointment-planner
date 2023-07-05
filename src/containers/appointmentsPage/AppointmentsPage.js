@@ -30,6 +30,10 @@ export const AppointmentsPage = ({contacts, appointments, addToAppointments}) =>
     e.preventDefault();
     console.log("test handle submit")
     addToAppointments(title, date, time, contact);
+    setTitle("");
+    setDate("");
+    setTime("");
+    setContact("");
     /*
     Add contact info and clear data  
     */
@@ -56,6 +60,7 @@ export const AppointmentsPage = ({contacts, appointments, addToAppointments}) =>
             title={title}
             date={date}
             time={time}
+            contact={contact}
 
             contacts={contacts}
 

@@ -14,6 +14,7 @@ export function AppointmentForm ({
   contacts,
   title,
   setTitle,
+  contact,
   setContact,
   date,
   setDate,
@@ -42,7 +43,7 @@ export function AppointmentForm ({
       </div>
 
       <div className="formLabelInputBlockWrapper">
-        <ContactPicker setContact={setContact} arr={contacts}/>
+        <ContactPicker setContact={setContact} contact={contact} arr={contacts}/>
       </div>
       
       <input className="formInputButton" type="submit" value="Create new appointment"/>

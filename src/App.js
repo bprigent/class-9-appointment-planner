@@ -101,9 +101,6 @@ function App() {
     </Route>
   ));
 
-
-
-
   // return the router
   return (
     <RouterProvider router={router}/>
