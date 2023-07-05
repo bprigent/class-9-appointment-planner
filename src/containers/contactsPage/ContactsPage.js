@@ -65,7 +65,7 @@ export const ContactsPage = ({contacts, addToContacts}) => {
       <div className="mainPageSecondaryWrapper">
         <div className="mainPageColumn1">
           <FontH2 copy="My Contacts"/>
-          <div className="contactTilesList">
+          <div className="TilesListWrapper">
             {contacts.map((contact, index) => (
               <ContactTile key={index} firstName={contact.firstName} lastName={contact.lastName} phone={contact.phone} email={contact.email}/>
             ))}

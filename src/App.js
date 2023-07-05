@@ -6,9 +6,6 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
 
-
-
-
   // state vars for contacts and appointments
   const [contacts, setContacts] = useState([
     {
