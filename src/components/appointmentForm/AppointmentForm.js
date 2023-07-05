@@ -20,7 +20,7 @@ export const AppointmentForm = ({
   setDate,
   time,
   setTime,
-  
+
   handleSubmit
 }) => {
 

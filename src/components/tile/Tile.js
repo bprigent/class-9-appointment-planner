@@ -12,3 +12,14 @@ export function ContactTile ({firstName, lastName, phone, email}) {
     </div>
   );
 };
+
+export function AppointmentTile ({title, date, time, contact}) {
+  return (
+    <div className="tileParentWrapper">
+      <div className="tileChildWrapper">
+        <FontH3 copy={`${title}, with ${contact}`}/>
+        <FontP copy={`${date} - ${time}`}/>
+      </div>
+    </div>
+  );
+};

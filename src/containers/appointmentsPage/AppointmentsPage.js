@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/header/Header";
 
 import { FontH2 } from "../../components/fonts/fonts";
-
+import { AppointmentTile } from "../../components/tile/Tile";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 
-export const AppointmentsPage = (contacts, appointments, addToAppointments) => {
+export const AppointmentsPage = ({contacts, appointments, addToAppointments}) => {
 
   // change the title of the html page
   useEffect(() => {
@@ -41,12 +41,17 @@ export const AppointmentsPage = (contacts, appointments, addToAppointments) => {
       <div className="mainPageSecondaryWrapper">
         <div className="mainPageColumn1">
           <FontH2 copy="My appointments"/>
+          <div>
+            {appointments.map((appointment, index) => (
+              <AppointmentTile key={index} title={appointment.title} date={appointment.date} time={appointment.time} contact={appointment.contact}/>
+            ))}
+          </div>
         </div>
         <div className="mainPageColumn2">
           <FontH2 copy="Add appointment"/>
           <AppointmentForm
             handleSubmit={handleSubmit}
-
+            
             title={title} 
             date={date} 
             time={time} 

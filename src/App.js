@@ -39,21 +39,21 @@ function App() {
   const [appointments, setAppointments] = useState([
     {
       title:"This is appointment title",
-      attendee:"Benjamin Prigent",
+      contact:"Benjamin Prigent",
       date:"22/11/24",
       time:"1200",
       duration:2
     },
     {
       title:"This is appointment title",
-      attendee:"Benjamin Prigent",
+      contact:"Benjamin Prigent",
       date:"22/11/24",
       time:"1200",
       duration:2
     },
     {
       title:"This is appointment title",
-      attendee:"Benjamin Prigent",
+      contact:"Benjamin Prigent",
       date:"22/11/24",
       time:"1200",
       duration:2
@@ -99,10 +99,8 @@ function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
-
-      {/* adding routes to contact and appointments with the right props*/}
       <Route path={ROUTES.CONTACTS} element={ <ContactsPage addToContacts={addToContacts} contacts={contacts} /> }/>
-      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage addToAppointments={addToAppointments} appointments={appointments} /> }/>
+      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage contacts={contacts} addToAppointments={addToAppointments} appointments={appointments} /> }/>
     </Route>
   ));
 
