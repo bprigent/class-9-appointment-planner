@@ -16,22 +16,22 @@ export const ContactForm = ({
     <form className="formBlockWrapper" onSubmit={handleSubmit}>
       <div className="formLabelInputBlockWrapper">
         <label htmlFor="firstName" className="formInputLabel">First name</label>
-        <input className="formInputBox" type="text" id="firstName" value={firstName} onChange={setFirstName}/>
+        <input className="formInputBox" type="text" id="firstName" value={firstName} onChange={setFirstName} required/>
       </div>
 
       <div className="formLabelInputBlockWrapper">
         <label htmlFor="lastName" className="formInputLabel">Last name</label>
-        <input className="formInputBox" type="text" id="lastName" value={lastName} onChange={setLastName}/>
+        <input className="formInputBox" type="text" id="lastName" value={lastName} onChange={setLastName} required/>
       </div>
       
       <div className="formLabelInputBlockWrapper">
         <label htmlFor="phone" className="formInputLabel">Phone number</label>
-        <input className="formInputBox" type="tel" id="phone" value={phone} onChange={setPhone}/>
+        <input className="formInputBox" type="tel" id="phone" value={phone} onChange={setPhone} required/>
       </div>
 
       <div className="formLabelInputBlockWrapper">
         <label htmlFor="email" className="formInputLabel">Email</label>
-        <input className="formInputBox" type="email" id="email" value={email} onChange={setEmail}/>
+        <input className="formInputBox" type="email" id="email" value={email} onChange={setEmail} required/>
       </div>
       
       <input className="formInputButton" type="submit" value="Create new contact"/>

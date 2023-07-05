@@ -24,23 +24,34 @@ export const ContactsPage = ({contacts, addToContacts}) => {
   const updatePhone = (e) => {setPhone(e.target.value)};
   const updateEmail = (e) => {setEmail(e.target.value)};
 
-  // Add contact info to contact list
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // add contacts to array
-    addToContacts(firstName, lastName, email, phone);
-    // clear form after submit
-    setFirstName("");
-    setLastName("");
-    setPhone("");
-    setEmail("");
+
+
+  // check if contact exists
+  const contactExists = (arr, checkedEmail, checkedPhone) => {
+    return arr.some(
+      (contact) => contact.email === checkedEmail || contact.phone === checkedPhone
+    );
   };
 
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
-  
+
+  // Add contact info to contact list
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+
+    if (!contactExists(contacts, email, phone)) {
+       // add contacts to array
+      addToContacts(firstName, lastName, email, phone);
+      // clear form after submit
+      setFirstName("");
+      setLastName("");
+      setPhone("");
+      setEmail("");
+    }
+  };
+
+
+
 
   return (
     <div className="mainPageWrapper">
