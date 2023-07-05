@@ -5,8 +5,10 @@ import { FontH3, FontP } from "../fonts/fonts";
 export function ContactTile ({firstName, lastName, phone, email}) {
   return (
     <div className="tileParentWrapper">
-      <FontH3 copy={`${lastName}, ${firstName}`}/>
-      <FontP copy={`${phone} - ${email}`}/>
+      <div className="tileChildWrapper">
+        <FontH3 copy={`${lastName}, ${firstName}`}/>
+        <FontP copy={`${phone} - ${email}`}/>
+      </div>
     </div>
   );
 };
